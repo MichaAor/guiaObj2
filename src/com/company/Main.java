@@ -1,10 +1,12 @@
 package com.company;
 
-import com.company.ejercicio2.Cliente;
 import com.company.ejercicio2.Factura;
 import com.company.ejercicio2.ItemVenta;
+import com.company.ejercicio3.Cliente;
+import com.company.ejercicio3.CueBancaria;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Main {
 
@@ -41,6 +43,22 @@ public class Main {
         System.out.println(f2.toString());*/
 
    ///EJ3
+        Cliente pablo = new Cliente("Pablo",'M');
+        //System.out.println(pablo.toString());
+        CueBancaria cueB1 = new CueBancaria(10000f,pablo);
+        //cueB1.deposito(2000f);
+        //cueB1.extraccion(14000);
+        //System.out.println(cueB1.toString());
+
+        Cliente paola = new Cliente("Paola",'F');
+        Cliente gustav = new Cliente("Gustav",'M');
+
+        CueBancaria cueB2 = new CueBancaria(50000f,paola);
+        CueBancaria cueB3 = new CueBancaria(1000000f,gustav);
+
+        for(String op : cueB1.getOperaciones()){
+            System.out.printf(op);
+        }
 
 
 

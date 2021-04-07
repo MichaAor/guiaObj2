@@ -35,5 +35,9 @@ public class Cliente {
         return genero;
     }
 
-
+    @Override
+    public String toString(){
+        return "Cliente:[ID= "+this.id+"|| Nombre= "+this.nombre+"|| Genero= "
+                +this.genero+"]";
+    }
 }
