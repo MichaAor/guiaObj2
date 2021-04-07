@@ -2,13 +2,13 @@ package com.company.ejercicio3;
 
 import java.util.UUID;
 
-public class Cuenta {
+public class CueBancaria {
     private UUID id;
     private float balance;
     private Cliente cliente;
 
-    public Cuenta(){}
-    public Cuenta(float balance,Cliente cliente){
+    public CueBancaria(){}
+    public CueBancaria(float balance, Cliente cliente){
         this.balance=balance;
         this.cliente=cliente;
     }
