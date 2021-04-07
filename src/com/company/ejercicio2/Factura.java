@@ -1,7 +1,6 @@
 package com.company.ejercicio2;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 public class Factura {
@@ -9,12 +8,13 @@ public class Factura {
     private float montoT;
     private LocalDateTime fecha;
     private Cliente cliente;
-    private itemVenta[] items;
+    private ItemVenta[] items;
 
     public Factura(){}
-    public Factura(float montoT,LocalDateTime fecha,Cliente cliente){
+    public Factura(LocalDateTime fecha,Cliente cliente,ItemVenta[] items){
         this.id = UUID.randomUUID();
-        this.montoT = montoT;
+        this.items = items;
+        this.montoT=this.totItems();
         this.fecha = fecha;
         this.cliente = cliente;
     }
@@ -50,6 +50,15 @@ public class Factura {
 
     public float montoF(){
         return this.montoT - (this.montoT*(this.cliente.getPorcDesc()/100));
+    }
+    public float totItems(){
+        float total=0f;
+        int i=0;
+        for(ItemVenta item : this.items){
+            System.out.println("paso"+i++);
+            total= total +item.getpUnit();
+        }
+        return total;
     }
 
     @Override
