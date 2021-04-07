@@ -1,18 +1,20 @@
 package com.company.ejercicio2;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 public class Factura {
-    public UUID id;
+    private UUID id;
     private float montoT;
     private LocalDateTime fecha;
     private Cliente cliente;
+    private itemVenta[] items;
 
     public Factura(){}
     public Factura(float montoT,LocalDateTime fecha,Cliente cliente){
         this.id = UUID.randomUUID();
-        this.montoT = this.montoF();
+        this.montoT = montoT;
         this.fecha = fecha;
         this.cliente = cliente;
     }
@@ -48,6 +50,12 @@ public class Factura {
 
     public float montoF(){
         return this.montoT - (this.montoT*(this.cliente.getPorcDesc()/100));
+    }
+
+    @Override
+    public String toString(){
+        return "Factura:[ID= "+this.id+"|| Monto= "+this.montoT+"|| Fecha= "
+                +this.fecha+"|| MontoDesc= "+this.montoF() + this.cliente.toString();
     }
 
 

@@ -1,10 +1,9 @@
 package com.company;
 
-import com.company.ejercicio1.Autor;
-import com.company.ejercicio1.Libro;
 import com.company.ejercicio2.Cliente;
+import com.company.ejercicio2.Factura;
 
-import java.util.UUID;
+import java.time.LocalDateTime;
 
 public class Main {
 
@@ -25,6 +24,10 @@ public class Main {
 
         Cliente cl1 = new Cliente("Carlos","minguito@gmail.com",15);
         System.out.println(cl1.toString());
+        LocalDateTime fecha = LocalDateTime.now();
+        Factura f1 = new Factura(25000f, fecha,cl1);
+        System.out.println(f1.toString());
+
 
 
 
